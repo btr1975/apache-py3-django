@@ -11,7 +11,7 @@
 
 This image is for Python Django Apps written in Python 3
 
-### Image Versions in apache-py2-django:1.0
+### Image Versions in apache-py3-django:1.0
 
 * Python: 3.5.2
 * Apache: 2.4.18 (Ubuntu) with mod_wsgi py3 version
@@ -19,6 +19,19 @@ This image is for Python Django Apps written in Python 3
 * Django-Localflavor: 1.5.1
 * MySQL-Connector: 2.0.4
 
+### Image Versions in apache-py3-django:1.1
+
+* Python: 3.5.2
+* Apache: 2.4.18 (Ubuntu) with mod_wsgi py3 version
+* Django: 1.11.2
+* Django-Localflavor: 1.5.1
+* mysqlclient: 1.3.10
+
 ### Docker-Image Version Tags
 * latest
 * 1.0
+* 1.1
+
+#### -- Version News: apache-py2-django:1.1 --
+* Added a Python script that builds the apache conf file
+* Swapped out MySQL-Connector, for mysqlclient, to many issues with MySQL-Connector
