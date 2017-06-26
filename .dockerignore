@@ -1,0 +1,10 @@
+# Don't Copy the Actual Dockerfile
+Dockerfile
+
+# Don't Copy these files either
+.gitignore
+README.md
+LICENSE
+
+# Don't Copy these folders
+.git/
