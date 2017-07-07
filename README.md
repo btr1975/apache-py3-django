@@ -44,7 +44,7 @@ This image is for Python Django Apps written in Python 3
 * 1.1
 * 1.2
 
-#### -- Version News: apache-py2-django:1.2 --
+#### -- Version News: apache-py3-django:1.2 --
 * Updated Python script that builds the apache conf file
 * Added a bash script that builds the apache conf file
 * Both scripts do the same thing, so use whichever you want.
