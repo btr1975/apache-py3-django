@@ -25,7 +25,8 @@ if [[ -f "/etc/apache2/sites-enabled/000-default.conf" ]]; then
     a2dissite 000-default.conf > /dev/null
 fi
 
-for directory in $(ls $djangodirname); do
+# apache_conf Funtion
+apache_conf () {
     if [[ -d $djangodirname/$directory ]]; then
         apacheconfname="${directory,,}.conf"
         if [[ ! -f "$apachedirname/$apacheconfname" ]]; then
@@ -93,4 +94,17 @@ for directory in $(ls $djangodirname); do
 
         fi
     fi
-done
+}
+
+if [[ -n "$SITE_DIRECTORY_NAME" ]]; then
+    directory=$SITE_DIRECTORY_NAME
+    apache_conf
+    
+else
+
+    for directory in $(ls $djangodirname); do
+        apache_conf
+
+    done
+
+fi

@@ -126,10 +126,14 @@ def main():
 
     """
     dir_count = count_dir()
+    
+    if os.environ.get('SITE_DIRECTORY_NAME'):
+        create_conf(os.environ.get('SITE_DIRECTORY_NAME'), 1)
 
-    for item_name in os.listdir(os.getcwd()):
-        if os.path.isdir(item_name):
-            create_conf(item_name, dir_count)
+    else:
+        for item_name in os.listdir(os.getcwd()):
+            if os.path.isdir(item_name):
+                create_conf(item_name, dir_count)
 
     sub.call('a2dissite 000-default.conf > /dev/null', stderr=sub.STDOUT, shell=True)
 
