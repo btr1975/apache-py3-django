@@ -13,13 +13,11 @@ LABEL maintainer="e_ben_75-python@yahoo.com" \
 
 COPY ./apache-site-conf.py /bin/
 
-# Arguments for Apache conf file builder script if not used, they will use default settings
-# SITE_SERVER_NAME = ServerName
-# SITE_SERVER_ADMIN = ServerAdmin
-
-
-ARG SITE_SERVER_NAME
-ARG SITE_SERVER_ADMIN
+# Environment variables for Apache conf file builder script if not used, they will use default settings
+# SITE_SERVER_NAME = www.example.com
+# SITE_SERVER_ADMIN = webmaster@localhost
+ENV SITE_SERVER_NAME
+ENV SITE_SERVER_ADMIN
 
 # Directory where Django Sites go
 
@@ -57,7 +55,7 @@ FROM temp2 as temp3
 LABEL image-version="1.3"
 
 # SITE_DIRECTORY_NAME = MySiteDir
-ARG SITE_DIRECTORY_NAME
+ENV SITE_DIRECTORY_NAME
 
 
 
