@@ -19,9 +19,9 @@ COPY  ./apache-site-conf.sh /bin/
 # SITE_SERVER_NAME=www.example.com
 # SITE_SERVER_ADMIN=webmaster@localhost
 # SITE_DIRECTORY_NAME=MySiteDir
-ENV SITE_SERVER_NAME
-ENV SITE_SERVER_ADMIN
-ENV SITE_DIRECTORY_NAME
+ENV SITE_SERVER_NAME=www.example.com
+ENV SITE_SERVER_ADMIN=webmaster@localhost
+ENV SITE_DIRECTORY_NAME=MySiteDir
 
 # Directory where Django Sites go
 

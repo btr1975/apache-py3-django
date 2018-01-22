@@ -74,7 +74,7 @@ ENV SITE_SERVER_NAME="www.example.com"
 ENV SITE_SERVER_ADMIN="admin@example.com"
 ENV SITE_DIRECTORY_NAME="SomeDir"
 
-COPY ./TsNetWeb .
+COPY ./SomeDir .
 
 RUN chmod 755 -R /DjangoSites \
     && /bin/apache-site-conf.sh

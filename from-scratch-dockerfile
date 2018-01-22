@@ -16,8 +16,8 @@ COPY ./apache-site-conf.py /bin/
 # Environment variables for Apache conf file builder script if not used, they will use default settings
 # SITE_SERVER_NAME = www.example.com
 # SITE_SERVER_ADMIN = webmaster@localhost
-ENV SITE_SERVER_NAME
-ENV SITE_SERVER_ADMIN
+ENV SITE_SERVER_NAME=www.example.com
+ENV SITE_SERVER_ADMIN=webmaster@localhost
 
 # Directory where Django Sites go
 
@@ -55,7 +55,7 @@ FROM temp2 as temp3
 LABEL image-version="1.3"
 
 # SITE_DIRECTORY_NAME = MySiteDir
-ENV SITE_DIRECTORY_NAME
+ENV SITE_DIRECTORY_NAME=MySiteDir
 
 
 
