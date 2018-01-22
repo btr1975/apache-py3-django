@@ -27,8 +27,8 @@ fi
 
 # apache_conf Funtion
 apache_conf () {
-    if [[ -d $djangodirname/$directory ]]; then
-        apacheconfname="${directory,,}.conf"
+    if [[ -d $djangodirname/$1 ]]; then
+        apacheconfname="${$1,,}.conf"
         if [[ ! -f "$apachedirname/$apacheconfname" ]]; then
             echo "Creating apache config $apachedirname/$apacheconfname"
             echo "<VirtualHost *:80>" >> $apachedirname/$apacheconfname
@@ -97,13 +97,13 @@ apache_conf () {
 }
 
 if [[ -n "$SITE_DIRECTORY_NAME" ]]; then
-    directory=$SITE_DIRECTORY_NAME
-    apache_conf
+    directory="$SITE_DIRECTORY_NAME"
+    apache_conf directory
     
 else
 
     for directory in $(ls $djangodirname); do
-        apache_conf
+        apache_conf directory
 
     done
 
